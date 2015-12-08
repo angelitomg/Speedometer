@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Speedometer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5jR-TY-fIg">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="MQJ-Sr-xib"/>
+                                    <constraint firstAttribute="width" constant="600" id="xjV-cg-tnV"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Speedometer" id="h8g-Mh-p0W"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnq-dv-WYF">
+                                <rect key="frame" x="20" y="229" width="560" height="141"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="118"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCm-uE-qCQ">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="WPe-cn-xMz"/>
+                                    <constraint firstAttribute="height" constant="44" id="qgG-8l-u2c"/>
+                                    <constraint firstAttribute="width" constant="600" id="ww8-3B-rER"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="0" id="0N1-iR-JBX">
+                                        <connections>
+                                            <segue destination="JmK-7T-BgV" kind="show" id="2cQ-ve-ZsZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6Xh-85-7GY"/>
+                                    <barButtonItem systemItem="stop" id="54x-4d-7S6">
+                                        <connections>
+                                            <action selector="resetTopSpeed:" destination="BYZ-38-t0r" id="TIZ-xX-CQE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qMZ-zU-65a">
+                                <rect key="frame" x="77" y="362" width="445" height="66"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="8CL-l8-ZjY"/>
+                                    <constraint firstAttribute="width" constant="445" id="MFy-gP-vwq"/>
+                                    <constraint firstAttribute="height" constant="66" id="cSf-u8-qK4"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="nqz-RK-IG9"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="OZv-40-Yvf"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="qMZ-zU-65a" secondAttribute="trailing" constant="58" id="6ox-5Q-jzS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5jR-TY-fIg" secondAttribute="trailing" constant="-20" id="Bdt-r4-4iZ"/>
+                            <constraint firstItem="5jR-TY-fIg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="E8G-Ae-0IC"/>
+                            <constraint firstItem="5jR-TY-fIg" firstAttribute="trailing" secondItem="MCm-uE-qCQ" secondAttribute="trailing" id="EH8-Cm-6Um"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MCm-uE-qCQ" secondAttribute="bottom" id="EiX-Ae-OQh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qMZ-zU-65a" secondAttribute="trailing" constant="58" id="EsB-OY-LB8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5jR-TY-fIg" secondAttribute="trailing" constant="-20" id="HsL-Ra-9Nb"/>
+                            <constraint firstItem="qMZ-zU-65a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="57" id="HuI-a3-dTw"/>
+                            <constraint firstItem="5jR-TY-fIg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Ju2-ej-cAr"/>
+                            <constraint firstItem="5jR-TY-fIg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="KSh-Zh-Xud"/>
+                            <constraint firstItem="5jR-TY-fIg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="LSh-hN-yXz"/>
+                            <constraint firstItem="hnq-dv-WYF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MbS-ZN-V29"/>
+                            <constraint firstItem="qMZ-zU-65a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="57" id="NxX-WM-ZfV"/>
+                            <constraint firstItem="5jR-TY-fIg" firstAttribute="leading" secondItem="MCm-uE-qCQ" secondAttribute="leading" id="Qqh-oB-2iG"/>
+                            <constraint firstItem="qMZ-zU-65a" firstAttribute="top" secondItem="hnq-dv-WYF" secondAttribute="bottom" constant="-8" id="TYn-Yi-f0L"/>
+                            <constraint firstItem="5jR-TY-fIg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ZZu-8e-7Zw"/>
+                            <constraint firstItem="qMZ-zU-65a" firstAttribute="top" secondItem="hnq-dv-WYF" secondAttribute="bottom" constant="-8" id="ZxF-gA-IgD"/>
+                            <constraint firstItem="MCm-uE-qCQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="eea-ID-6Bl"/>
+                            <constraint firstItem="hnq-dv-WYF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gAN-WI-HAd"/>
+                            <constraint firstItem="MCm-uE-qCQ" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="lVp-j5-Ire"/>
+                            <constraint firstItem="qMZ-zU-65a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-0.5" id="obV-XY-FMe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MCm-uE-qCQ" secondAttribute="trailing" constant="-20" id="wbl-CI-zgw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="speedLabel" destination="hnq-dv-WYF" id="eeT-7s-f9Z"/>
+                        <outlet property="speedUnitPickerView" destination="qMZ-zU-65a" id="6Fx-OX-Q0z"/>
+                        <outlet property="topSpeedButton" destination="0N1-iR-JBX" id="Xet-5c-P4l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="394" y="233"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Wgh-C9-Bf5">
+            <objects>
+                <viewController id="JmK-7T-BgV" customClass="MapViewController" customModule="Speedometer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ldq-w7-6gw"/>
+                        <viewControllerLayoutGuide type="bottom" id="SMB-7b-3fz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oVN-Xv-vUV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IXv-4L-g18">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Top Speed Location" id="qJE-Yu-AvA">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="eE3-d6-0Yi">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="qlS-z0-f4f"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PAI-3i-AE3">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <animations/>
+                            </mapView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IXv-4L-g18" firstAttribute="leading" secondItem="PAI-3i-AE3" secondAttribute="leading" id="0xw-mO-zcS"/>
+                            <constraint firstItem="PAI-3i-AE3" firstAttribute="top" secondItem="IXv-4L-g18" secondAttribute="bottom" id="aU2-WM-o5l"/>
+                            <constraint firstItem="IXv-4L-g18" firstAttribute="top" secondItem="ldq-w7-6gw" secondAttribute="bottom" id="hIf-8C-050"/>
+                            <constraint firstItem="PAI-3i-AE3" firstAttribute="bottom" secondItem="SMB-7b-3fz" secondAttribute="top" id="neS-fJ-WAV"/>
+                            <constraint firstAttribute="trailing" secondItem="PAI-3i-AE3" secondAttribute="trailing" id="q8O-KC-RKN"/>
+                            <constraint firstItem="IXv-4L-g18" firstAttribute="leading" secondItem="oVN-Xv-vUV" secondAttribute="leading" id="v6t-eg-twQ"/>
+                            <constraint firstItem="IXv-4L-g18" firstAttribute="trailing" secondItem="PAI-3i-AE3" secondAttribute="trailing" id="vAk-uR-hq4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="topSpeedMapView" destination="PAI-3i-AE3" id="2Gp-WK-iLC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cXv-l8-IcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1196" y="233"/>
+        </scene>
+    </scenes>
+</document>
